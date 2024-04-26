@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo RSA</title>
+    <link rel="icon" href="img/rsa-aes-encryption-1536x878.jpg" type="image/x-icon">
+    <!-- link css --->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <!--box icon-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!--header-->
+    <header>
+        <!--Nav-->
+        <div class="nav container">
+            <!--logo-->
+            <a href="#" class="logo">Ke<span>vscl</span></a>
+            <a href="#rsa">Algoritmo</a>
+            <!--login btn-->
+            <a href="#" class="login" id="fechaP1"></a>
+        </div>
+    </header>
+
+    <main>
+        <!--Post header-->
+        <section class="post-header">
+            <div class="header-content post-container">
+                <!--Back to home-->
+                <a href="../index.html" class="back-home">Home</a>
+                <h1 class="header-title">Algoritmo RSA</h1>
+                <!--Post img-->
+                <img src="img/rsa-aes-encryption-1536x878.jpg" alt="" class="header-img">
+            </div>
+        </section>
+
+        <!-- Algoritmo -->
+        <section class="post-content post-container">
+            <h2 class="sub-heading">Sistema criptográfico de clave pública</h2>
+            <p class="post-text">
+                El nombre RSA se deriva de las iniciales de sus tres creadores, Rivest, Shamir y Adleman, en el año
+                1977. Este algoritmo se clasifica como un cifrado asimétrico, también conocido como de clave pública, y
+                es ampliamente utilizado en la actualidad. La mayoría de los sitios web implementan seguridad SSL/TLS,
+                lo que permite la autenticación mediante RSA.
+            </p>
+            <p class="post-text">
+                En el esquema de RSA, se emplean dos claves: una pública y una privada. El contenido de texto plano que
+                se cifra con la clave pública puede ser descifrado únicamente con la clave privada correspondiente, y
+                viceversa. De igual manera, cualquier contenido cifrado con la clave privada puede ser descifrado
+                mediante la clave pública asociada.
+            </p>
+            <img src="img/rsa_algoritmo-1.jpg" alt="" class="post-img">
+        </section>
+
+        <section id="rsa">
+            <h2 class="sub-heading">Algoritmo RSA - Calculadora</h2>
+            <div class="option">
+                <div class="option-wrapper">
+                    <input class="option__input" type="text" id="texto_cifrar" required>
+                    <label for="">Texto a cifrar</label>
+                </div>
+            </div>
+
+            <div class="button-option">
+                <button class="btn__cifrar">Cifrar</button>
+                <button class="btn__descifrar">Descifrar</button>
+                <button class="btn__limpiar">Limpiar</button>
+
+            </div>
+
+            <div class="algoritmo">
+                <div class="cifrar__texto">
+                    <div class="cifrar">
+                        <p class="post-paso">
+                            Paso 1: Ingrese los valores de p y q.
+                        </p>
+                        <div class="cifrar-wrapper">
+                            <label for="">p</label>
+                            <input type="text" name="" id="p">
+                            <label for="">q</label>
+                            <input type="text" name="" id="q">
+                        </div>
+                        <button class="btn__descifrar" id="btn__calcularNZ">Calcular N y Z</button>
+                    </div>
+
+                    <div class="cifrar">
+                        <p class="post-paso">
+                            Valores calculados
+                        </p>
+                        <div class="cifrar-wrapper">
+                            <label for="">n</label>
+                            <input type="text" name="" id="n">
+                            <label for="">z</label>
+                            <input type="text" name="" id="z">
+                        </div>
+                    </div>
+
+                    <div class="cifrar">
+                        <p class="post-paso">
+                            Paso 2: Ingrese el valor de e & d.
+                        </p>
+
+                        <div class="cifrar-wrapper">
+                            <label for="">e</label>
+                            <input type="text" name="" id="e">
+                            <label for="">d</label>
+                            <input type="text" name="" id="d">
+                        </div>
+
+                        <p class="post-paso">
+                            Verificar consistencia
+                        </p>
+                        <button class="btn__descifrar" id="verificar">Verificar d & e</button>
+                    </div>
+
+                    <div class="cifrar">
+                        <p class="post-paso" id="consistencia">
+                            Resultado
+                        </p>
+                        <div id="tabla-resultados">
+                            <table id="resultados">
+                                <thead>
+                                    <tr>
+                                        <th>M</th>
+                                        <th>Pos</th>
+                                        <th>OP</th>
+                                        <th>C</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Aquí se agregarán las filas de la tabla -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="descifrar" hidden>
+                    <div class="descifrar__texto">
+                        <div class="cifrar">
+                            <p class="post-paso">
+                                Paso 1: Ingrese los valores de e y n.
+                            </p>
+                            <div class="cifrar-wrapper">
+                                <label for="">e</label>
+                                <input type="text" name="" id="ed">
+                                <label for="">n</label>
+                                <input type="text" name="" id="nd">
+                            </div>
+                            <button class="btn__descifrar" id="btn__calcularD">Calcular d</button>
+
+                        </div>
+                        <div class="cifrar">
+                            <p class="post-paso">
+                                Valores d, p &q
+                            </p>
+                            <div class="cifrar-wrapper">
+                                <label for="">d</label>
+                                <input type="text" name="" id="dd">
+                                <label for="">p</label>
+                                <input type="text" name="" id="pd">
+                                <label for="">q</label>
+                                <input type="text" name="" id="qd">
+                            </div>
+                            <button class="btn__descifrar" id="btn__descifrar__M">Calcular M</button>
+                        </div>
+                        <div class="cifrar">
+                            <div >
+                                <table id="resultados_descifrado">
+                                    <thead>
+                                        <tr>
+                                            <th>C</th>
+                                            <th>OP</th>
+                                            <th>Pos</th>
+                                            <th>M</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Aquí se agregarán las filas de la tabla -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
