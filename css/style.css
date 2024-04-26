@@ -18,7 +18,9 @@ section{
     margin: auto;
     width: 100%;
 }
-
+a{
+    text-decoration: none;   
+}
 /* header */
 header {
     position: fixed;
@@ -48,7 +50,7 @@ header.shadow .logo{
 .logo{
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .logo span{
@@ -278,4 +280,112 @@ textarea{
 #resultados th,  #resultados_descifrado th{
     background-color: #f2f2f2;
     font-weight: bold;
+}
+
+
+footer {
+    bottom: 0;
+    width: 100% - 20px;
+    padding: 150px;
+    text-align: center;
+    background-image: url("../img/bg.jpg");
+}
+
+.bx{
+    font-size: 1.9rem;
+    color: var(--bg-color);
+}
+
+.bx:hover{
+    color: var(--second-color);
+    transition: 0.3s all linear;
+}
+
+.copyright {
+    color: #FFFFFF;
+    font-size: 13px;
+	margin: 0;
+	padding: 0;
+}
+/*Responsive*/
+@media (max-width: 1060px){
+    .container{
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px){
+    .nav{
+        padding: 14px 0;
+    }
+    .post-container{
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .header-img, .post-img-content{
+        width: 400px;
+        height: auto;
+    }
+    .post-header{
+        height: 150px;
+    }
+    .post-content{
+        margin-top: 14rem !important;
+    }
+    .post-img{
+        padding-left: 25px;
+        width: 500px;
+        height: auto;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 570px){
+    #rsa{
+        margin: 2%;
+    }
+    .post-img{
+        padding-left: 25px;
+        width: 500px;
+        height: auto;
+    }
+    .post-text, .post-paso{
+        font-size: 1rem;
+    }
+
+    .cifrar__texto, .descifrar{
+        width: 90%;
+        padding: 0px;;
+    }
+    #resultados th, #resultados td, #resultados_descifrado td, #resultados_descifrado th {
+        text-align: center;
+        border: 1px solid #dddddd;
+    }
+}
+
+@media (max-width: 396px){
+    #rsa{
+        margin: 2%;
+    }
+    .post-img{
+        padding-left: 25px;
+        width: 350px;
+        height: auto;
+    }
+    .post-text, .post-paso{
+        font-size: 1rem;
+    }
+
+    .cifrar__texto, .descifrar{
+        width: 90%;
+        padding: 0px;;
+    }
+    #resultados th, #resultados td, #resultados_descifrado td, #resultados_descifrado th {
+        text-align: center;
+        border: 1px solid #dddddd;
+    }
 }
